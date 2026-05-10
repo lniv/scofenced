@@ -144,7 +144,7 @@ if not using_wireless:
 # than neat and maintainable - it's pretty short so far, and i want to use it with kids.
 
 
-class FencingStaus:
+class FencingStatus:
     """
     main class handling actions.
 
@@ -441,7 +441,7 @@ class FencingStaus:
                 self.worst_cycle_msec = last_cycle_msec
 
 
-class WirelessFencingStatus(FencingStaus):
+class WirelessFencingStatus(FencingStatus):
     """
     Detect hits by receiving messages over wifi, rather than wires.
     welcome to the future, i hope.
@@ -678,7 +678,7 @@ if using_wireless:
         update_images_when_announcing=settings["update_images_when_announcing"]
     )
 else:
-    fencer_status = FencingStaus(
+    fencer_status = FencingStatus(
         update_images_when_announcing=settings["update_images_when_announcing"]
     )
 fencer_status.run_forever()
